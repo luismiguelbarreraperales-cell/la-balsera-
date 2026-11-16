@@ -1,0 +1,41 @@
+LA BALSERA - APP PARA ANDROID (APK)
+===================================
+
+Esto es el proyecto para fabricar el archivo  La_Balsera.apk  (el que se
+instala en el telefono, igual que una app descargada de MediaFire).
+El APK resultante funciona SIN internet y no depende de ningun otro programa.
+
+El APK se fabrica una sola vez en la nube gratis de GitHub (no hay que
+instalar nada en tu computadora):
+
+1. Entra a https://github.com y crea una cuenta gratis.
+2. Crea un repositorio nuevo, llamado labalsera, marcado como PRIVADO.
+3. Sube TODO el contenido de esta carpeta (boton "uploading an existing file",
+   arrastra todo). Debe quedar la carpeta oculta ".github" dentro.
+   Si no se sube sola: "Add file > Create new file", escribe como nombre
+   .github/workflows/apk.yml y pega ahi el contenido de ese archivo.
+4. Abre la pestana "Actions". Se pone a trabajar sola (unos 5 minutos).
+   Cuando salga el visto verde, entra a esa ejecucion y abajo, en "Artifacts",
+   descarga  La_Balsera_APK.  Al descomprimirlo sale  La_Balsera.apk.
+5. Pasa el .apk al telefono (WhatsApp, USB, MediaFire, etc.).
+
+INSTALAR EN EL TELEFONO
+Abre el .apk. Android pedira permiso para "instalar apps de fuentes
+desconocidas": activalo para ese programa (Chrome, Archivos o WhatsApp) y
+pulsa Instalar. Queda el icono "La Balsera" como cualquier app.
+
+DATOS Y RESPALDOS
+- Los datos quedan guardados en el telefono. Los respaldos (.json/.xlsx/.docx)
+  se guardan en la carpeta Descargas del telefono.
+- Para pasar datos de otra version (navegador o computadora): Respaldo en la
+  version vieja > pasar el archivo al telefono > Restaurar en la app nueva.
+
+ACTUALIZAR EN EL FUTURO
+Cambia app/src/main/assets/index.html por la version nueva, sube versionCode
+(2, 3...) en app/build.gradle, y vuelve a subir. NO borres ni cambies el
+archivo keystore.p12: es la "firma" de la app. Con la misma firma, el APK
+nuevo se instala ENCIMA del anterior sin borrar los datos.
+
+IMPORTANTE: Mantén el repositorio PRIVADO (contiene la firma de la app).
+Solo para Android. iPhone no instala APK; ahi se usa la version web
+instalable (Safari > Compartir > Agregar a pantalla de inicio).
